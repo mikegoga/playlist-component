@@ -4,13 +4,13 @@
  */
 
 import { LitElement, html, css } from "lit";
-import { DDDsuper } from "@haxtheweb/d-d-d/d-d-d.js";
+import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "./slide-indicator.js";
 import "./slide-arrow.js";
 import "./play-list-slide.js";
 
-export class PlaylistComponent extends DDDsuper(I18NMixin(LitElement)) {
+export class PlaylistComponent extends DDD {
   static get tag() {
     return "playlist-component";
   }
