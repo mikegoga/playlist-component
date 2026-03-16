@@ -24,29 +24,55 @@ export class SlideIndicator extends DDD {
     return [
       super.styles,
       css`
+        :host {
+          display: block;
+        }
+
         .dots {
           display: flex;
-          gap: var(--ddd-spacing-2);
+          align-items: center;
+          gap: 12px;
         }
+
         button {
-          width: 10px;
-          height: 10px;
+          width: 11px;
+          height: 11px;
           border-radius: 999px;
           border: 0;
-          background: var(--ddd-theme-default-slateGray);
-          opacity: 0.35;
+          padding: 0;
+          background: rgba(24, 52, 95, 0.25);
           cursor: pointer;
+          transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
         }
+
+        button:hover {
+          transform: scale(1.08);
+        }
+
         button[aria-current="true"] {
-          background: var(--ddd-theme-primary);
-          opacity: 1;
+          background: #0d67be;
+        }
+
+        button:focus-visible {
+          outline: 3px solid rgba(13, 103, 190, 0.22);
+          outline-offset: 3px;
+        }
+
+        @media (max-width: 520px) {
+          .dots {
+            gap: 10px;
+          }
+
+          button {
+            width: 10px;
+            height: 10px;
+          }
         }
       `
     ];
   }
 
   _pick(i) {
-    // This is the key “custom event bubbling” 
     this.dispatchEvent(
       new CustomEvent("play-list-index-changed", {
         bubbles: true,
@@ -54,8 +80,6 @@ export class SlideIndicator extends DDD {
         detail: { index: i }
       })
     );
-
-    // TODO: add keyboard support (Enter/Space) and roving tabindex
   }
 
   render() {
@@ -65,6 +89,7 @@ export class SlideIndicator extends DDD {
           (_, i) => html`
             <button
               type="button"
+              role="tab"
               aria-label="Go to slide ${i + 1}"
               aria-current="${i === this.index}"
               @click=${() => this._pick(i)}

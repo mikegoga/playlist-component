@@ -1,131 +1,103 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <base href="/" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="Description"
+      content="Demonstration for playlist-component"
+    />
+    <title>playlist-component</title>
 
-<head>
-  <base href="/">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Demonstration for playlist-component">
+    <style>
+      :root,
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-  <style>
-    :root, html, body {
-      margin: var(--ddd-spacing-0);
-      padding: var(--ddd-spacing-0);
-    }
-    #demo {
-      margin: var(--ddd-spacing-2);
-    }
-    playlist-component {
-      margin: var(--ddd-spacing-2);
-      border: var(--ddd-border-md);
-      border-radius: var(--ddd-radius-lg);
-    }
-    playlist-component:hover {
-      box-shadow: var(--ddd-boxShadow-sm);
-    }
-    #example {
-      --playlist-component-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
-    }
-  </style>
-  <title>playlist-component</title>
-</head>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: white;
+      }
 
-<body>
-  <div id="demo">
-    <h1>playlist-component</h1>
-    <!-- this is going to do whatever the tag's defaults are -->
-    <h2>Default</h2>
-    <playlist-component></playlist-component>
-    <h2>Slot usage</h2>
-    <playlist-component data-accent="2" data-primary="17"><div>Sample slot content</div></playlist-component>
-    <h2>Property usage</h2>
-    <playlist-component id="example" title="Sample property title"></playlist-component>
-  </div>
-  <script type="module" src="./playlist-component.js"></script>
+      #demo {
+        margin: 24px;
+      }
 
-  <!-- Take HAX, the Web and you further down the rabbit hole -->
-  <style>
-    #follow-the-white-rabbit {
-      margin: var(--ddd-spacing-4) auto var(--ddd-spacing-16)  var(--ddd-spacing-4);
-      background-color: var(--ddd-accent-4);
-      color: var(--ddd-theme-default-coalyGray);
-    }
-    #follow-the-white-rabbit[open] summary {
-      background-color: var(--ddd-accent-4) !important;
-      color: var(--ddd-theme-default-coalyGray);
-    }
-    #follow-the-white-rabbit[open] .content {
-      padding: var(--ddd-spacing-0) var(--ddd-spacing-4);
-    }
-    #follow-the-white-rabbit ul,
-    #follow-the-white-rabbit li {
-      padding: var(--ddd-spacing-0);
-      margin: var(--ddd-spacing-0);
-    }
-    #follow-the-white-rabbit li {
-      font-size: var(--ddd-font-size-xs);
-      list-style: none;
-    }
-    #follow-the-white-rabbit li strong,
-    #follow-the-white-rabbit li a {
-      padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
-      color: var(--ddd-theme-default-coalyGray);
-      display: block;
-      font-weight: var(--ddd-font-weight-bold);
-    }
-    #follow-the-white-rabbit li:focus-within a,
-    #follow-the-white-rabbit li:hover a {
-      background-color: var(--ddd-theme-default-coalyGray);
-      color: var(--ddd-theme-default-globalNeon);
-    }
-  </style>
-  <details id="follow-the-white-rabbit" open>
-    <summary>How to Develop</summary>
-    <div class="content">
-      <p>
-      
-        <strong>Checkout project on github:</strong> <a href="https://github.com/mikegoga/playlist-component" target="_blank" rel="nofollow">mikegoga/playlist-component</a>
-        
-      </p>
-      <p>
-        You can edit the current page by modifying <code>index.html</code><br />
-        To edit your <strong>playlist-component</strong> tag, modify <code>src/playlist-component.js</code>.
-        This file contains all the HTML, CSS and JavaScript used to render your elements above!
-      </p>
-      <p>
-        Web components are easy to follow once you get used to their pattern.
-        Below are links to help on your journey. Good luck, we need you!
-      </p>
-      <ul>
-        <li><a href="https://haxtheweb.org/documentation/ddd" target="_blank">🧑‍🎨 Learn DDD HAX Design system</a></li>
-        <li><a href="https://lit.dev/playground/" target="_blank" rel="nofollow">🔥 Learn Lit</a></li>
-        <li><a href="https://hax.psu.edu" target="_blank">🧙 HAX The Web @ Penn State</a></li>
-      </ul>
-      <h2>Join and Share HAX</h2>
-      <ul>
-        <li><a href="https://github.com/haxtheweb/issues/issues" target="_blank" rel="nofollow">🔮 Ideas to HAX Harder, Better, Faster, Stronger</a></li>
-        <li><a href="https://bit.ly/hax-the-linkedin" target="_blank" rel="nofollow">👔 Share on LinkedIn</a></li>
-        <li><a href="https://bit.ly/hax-the-x" target="_blank" rel="nofollow">🧵 Tweet on X</a></li>
-        <li><a href="https://bit.ly/hax-discord" target="_blank" rel="nofollow">💬 Join Community</a></li>
-      </ul>
-      <h2>Learn the languages and tools</h2>
-      <ul>
-        <li><a href="https://w3schools.com" target="_blank" rel="nofollow">🌐 Learn HTML</a></li>
-        <li><a href="https://web.dev/learn/css/" target="_blank" rel="nofollow">🎨 Learn CSS</a></li>
-        <li><a href="http://Javascript.info" target="_blank" rel="nofollow">💻 Learn JavaScript (JS)</a></li>
-        <li><a href="https://gitimmersion.com" target="_blank" rel="nofollow">🦺 Learn Git / Github</a></li>
-        <li><a href="https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/" target="_blank" rel="nofollow">📦 Learn NPM</a></li>
-        <li><a href="http://learnux.io" target="_blank" rel="nofollow">📐 Learn UX / UI development</a></li>
-      </ul>
-      <h2>Find purpose and inspiration</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=eC7xzavzEKY" target="_blank" rel="nofollow">🐟 This is Water - David Foster Wallace</a></li>
-        <li><a href="https://www.youtube.com/watch?v=kYfNvmF0Bqw" target="_blank" rel="nofollow">🏗️ Secrets of Life - Steve Jobs</a></li>
-        <li><strong>💡 <em>Never. Stop. Innovating.</em></strong></li>
-      </ul>
+      playlist-component {
+        display: block;
+        margin: 24px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="demo">
+      <h1>playlist-component</h1>
+
+      <h2>Playlist demo (slides are Light DOM children)</h2>
+
+      <playlist-component index="0" loop="true">
+        <play-list-slide
+          top-heading="TOP LINE HEADING"
+          second-heading="Slide 1, sub-heading"
+        >
+          <p>
+            This could be an image, a whole bunch of text, or anything really.
+            Add enough content and it will scroll inside the content box.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+          </p>
+          <p>
+            Add as many paragraphs as you want — the content region is
+            scrollable.
+          </p>
+        </play-list-slide>
+
+        <play-list-slide
+          top-heading="TOP LINE HEADING"
+          second-heading="Slide 2, sub-heading"
+        >
+          <p>Slide 2 content. You can put lists, images, links, etc.</p>
+          <ul>
+            <li>Point one</li>
+            <li>Point two</li>
+            <li>Point three</li>
+          </ul>
+        </play-list-slide>
+
+        <play-list-slide
+          top-heading="TOP LINE HEADING"
+          second-heading="Slide 3, sub-heading"
+        >
+          <p>
+            Slide 3 content. Try resizing the browser — it should still feel
+            usable.
+          </p>
+          <p>
+            If you add more slides here, the dots auto-update because the parent
+            counts <code>play-list-slide</code> children.
+          </p>
+        </play-list-slide>
+
+        <play-list-slide
+          top-heading="TOP LINE HEADING"
+          second-heading="Slide 4, sub-heading"
+        >
+          <p>Slide 4 content.</p>
+          <p>When you click next on the last slide, loop behavior applies.</p>
+        </play-list-slide>
+      </playlist-component>
     </div>
-  </details>
-</body>
+
+    <script type="module" src="./src/playlist-component.js"></script>
+  </body>
 </html>
